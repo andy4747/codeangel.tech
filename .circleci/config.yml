@@ -55,7 +55,7 @@ workflows:
   build-deploy-staging:
     jobs:
       - build-and-deploy:
-          app_id: DIGITALOCEAN_APP_ID_STAGING
+          app_id: $DIGITALOCEAN_APP_ID_STAGING
           branch: develop
           filters:
             branches:
@@ -64,7 +64,7 @@ workflows:
   build-deploy-production:
     jobs:
       - build-and-deploy:
-          app_id: DIGITALOCEAN_APP_ID_PRODUCTION
+          app_id: $DIGITALOCEAN_APP_ID_PRODUCTION
           branch: master
           filters:
             branches:

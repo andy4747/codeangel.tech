@@ -39,7 +39,7 @@ jobs:
           name: Deploy to DigitalOcean App Platform
           command: |
             doctl auth init -t ${DIGITALOCEAN_ACCESS_TOKEN}
-            doctl apps create-deployment ${<< parameters.app_id >>} \
+            doctl apps create-deployment ${\<< parameters.app_id >>} \
               --wait \
               --format ID \
               --spec <(cat <<EOF
@@ -50,7 +50,7 @@ jobs:
                     "name": "web",
                     "git": {
                       "repo_clone_url": "${CIRCLE_REPOSITORY_URL}",
-                      "branch": "<< parameters.branch >>"
+                      "branch": "\<< parameters.branch >>"
                     },
                     "output_dir": "/public",
                     "index_document": "index.html",

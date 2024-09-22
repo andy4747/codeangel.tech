@@ -1,0 +1,82 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.0.2
+
+jobs:
+  build-and-deploy:
+    docker:
+      - image: cimg/node:14.0
+    parameters:
+      app_id:
+        type: env_var_name
+      branch:
+        type: string
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Install Hugo
+          command: |
+            HUGO_VERSION=0.134.3
+            wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
+            tar xzf hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
+            sudo mv hugo /usr/local/bin/
+      - run:
+          name: Build with npm and Hugo
+          command: |
+            hugo version
+            npm run build
+      - run:
+          name: Install doctl
+          command: |
+            cd ~/
+            wget https://github.com/digitalocean/doctl/releases/download/v1.78.0/doctl-1.78.0-linux-amd64.tar.gz
+            tar xf ~/doctl-1.78.0-linux-amd64.tar.gz
+            sudo mv ~/doctl /usr/local/bin
+      - run:
+          name: Deploy to DigitalOcean App Platform
+          command: |
+            doctl auth init -t ${DIGITALOCEAN_ACCESS_TOKEN}
+            doctl apps create-deployment ${<< parameters.app_id >>} \
+              --wait \
+              --format ID \
+              --spec <(cat <<EOF
+              {
+                "name": "static",
+                "static_sites": [
+                  {
+                    "name": "web",
+                    "git": {
+                      "repo_clone_url": "${CIRCLE_REPOSITORY_URL}",
+                      "branch": "<< parameters.branch >>"
+                    },
+                    "output_dir": "/public",
+                    "index_document": "index.html",
+                    "catchall_document": "404.html"
+                  }
+                ]
+              }
+            EOF
+            )
+
+workflows:
+  version: 2
+  build-deploy-staging:
+    jobs:
+      - build-and-deploy:
+          app_id: DIGITALOCEAN_APP_ID_STAGING
+          branch: develop
+          filters:
+            branches:
+              only: develop
+
+  build-deploy-production:
+    jobs:
+      - build-and-deploy:
+          app_id: DIGITALOCEAN_APP_ID_PRODUCTION
+          branch: master
+          filters:
+            branches:
+              only: master

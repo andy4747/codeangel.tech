@@ -2,6 +2,7 @@
 # Generated files by hugo
 /resources/_gen/
 /assets/jsconfig.json
+public/            
 hugo_stats.json
 
 # Executable may be added to repository

@@ -6,7 +6,7 @@ orbs:
 jobs:
   build-and-deploy:
     docker:
-      - image: cimg/node:14.0
+      - image: cimg/node:20.17.0
     parameters:
       app_id:
         type: env_var_name

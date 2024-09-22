@@ -14,8 +14,10 @@ jobs:
         type: string
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
+      - run:
+          name: install npm packages
+          command: |
+            npm ci
       - run:
           name: Install Hugo
           command: |

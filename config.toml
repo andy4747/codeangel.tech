@@ -1,0 +1,41 @@
+# SETUP
+baseurl = "/"
+publishdir = "public"
+DefaultContentLanguage = "en"
+canonifyUrls = "true"
+googleAnalytics = ""
+disableKinds = ["RSS","taxonomy","taxonomyTerm"] #remove this if needed
+summaryLength = 40
+
+[outputs]
+    home = ["HTML","RSS"]
+    section  = ["HTML"]
+
+[outputFormats]
+    [outputFormats.RSS]
+        mediatype = "application/rss"
+        baseName = "feed"
+# For RSS
+[author]
+    name = "Angel Dhakal"
+    email = "angeldhakal97@gmail.com"
+
+[params]
+    title="favicon"
+    description="favicon"
+    showReadTime = 1
+    images = ["/img/favicon.png"]
+
+    [[params.social]]
+    title="Linkedin"
+    url="https://www.linkedin.com/in/angeldhakal/"
+    weight=1
+
+pageSize=8
+pagePath="page"
+
+[taxonomies]
+    tag="tags"
+
+[permalinks]
+    blog="blog/:title"

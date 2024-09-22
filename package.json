@@ -1,0 +1,19 @@
+{
+  "name": "thecodeangel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+        "dev": "hugo server",
+        "build": "hugo -gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
+        "preview": "hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.12"
+  }
+}

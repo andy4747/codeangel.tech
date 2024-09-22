@@ -1,0 +1,10 @@
+favicon="images/favicon.png"
+logo="images/logo.png"
+logo_darkmode="images/logo_darkmode.png"
+
+logo_width="100px"
+logo_height="80px"
+
+logo_webp = true #R&D webp in web apps
+logo_text="TCA"
+

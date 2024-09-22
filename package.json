@@ -3,15 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-        "dev": "hugo server",
-        "build": "hugo -gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
-        "preview": "hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify",
+    "build-css": "tailwindcss -i ./assets/css/main.css -o ./static/css/style.css",
+    "dev": "npm run build-css && hugo server",
+    "build": "npm run build-css && hugo -gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
+    "preview": "npm run build-css && hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.12"

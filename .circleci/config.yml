@@ -48,7 +48,7 @@ jobs:
           name: Deploy to DigitalOcean App Platform
           command: |
             doctl auth init -t ${DIGITALOCEAN_ACCESS_TOKEN}
-            doctl apps create-deployment ${\<< parameters.app_id >>} --wait --force-rebuild
+            doctl apps create-deployment << parameters.app_id >> --wait --force-rebuild
 
 workflows:
   version: 2

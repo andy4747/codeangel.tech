@@ -14,10 +14,17 @@ jobs:
         type: string
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - npm-cache-v1-{{ checksum "package-lock.json" }}
       - run:
           name: install npm packages
           command: |
             npm ci
+      - save_cache:
+          paths:
+            - ./node_modules
+          key: npm-cache-v1-{{checksum "package-lock.json"}}
       - run:
           name: Install Hugo
           command: |

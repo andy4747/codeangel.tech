@@ -1,14 +1,14 @@
 version: 2.1
-
 orbs:
   node: circleci/node@5.0.2
-
 jobs:
   build-and-deploy:
     docker:
       - image: cimg/node:20.17.0
     parameters:
       app_id:
+        type: env_var_name
+      app_name:
         type: env_var_name
       branch:
         type: string
@@ -48,8 +48,7 @@ jobs:
           name: Deploy to DigitalOcean App Platform
           command: |
             doctl auth init -t ${DIGITALOCEAN_ACCESS_TOKEN}
-            doctl apps create-deployment ${app_id} --name ${app_name} --wait --force-rebuild
-
+            doctl apps create-deployment << parameters.app_id >> --name << parameters.app_name >> --force-rebuild
 workflows:
   version: 2
   build-deploy-staging:
@@ -61,7 +60,6 @@ workflows:
           filters:
             branches:
               only: develop
-
   build-deploy-production:
     jobs:
       - build-and-deploy:

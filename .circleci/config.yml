@@ -48,7 +48,7 @@ jobs:
           name: Deploy to DigitalOcean App Platform
           command: |
             doctl auth init -t ${DIGITALOCEAN_ACCESS_TOKEN}
-            doctl apps create-deployment ${app_id} --wait --force-rebuild
+            doctl apps create-deployment ${app_id} --name ${app_name} --wait --force-rebuild
 
 workflows:
   version: 2
@@ -56,6 +56,7 @@ workflows:
     jobs:
       - build-and-deploy:
           app_id: DIGITALOCEAN_APP_ID_STAGING
+          app_name: DIGITALOCEAN_APP_NAME_STAGING
           branch: develop
           filters:
             branches:
@@ -65,6 +66,7 @@ workflows:
     jobs:
       - build-and-deploy:
           app_id: DIGITALOCEAN_APP_ID_PRODUCTION
+          app_name: DIGITALOCEAN_APP_NAME_PRODUCTION
           branch: master
           filters:
             branches:

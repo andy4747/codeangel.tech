@@ -24,6 +24,15 @@ jobs:
             - ./node_modules
           key: npm-cache-v1-{{checksum "package-lock.json"}}
       - run:
+          name: Install Go
+          command: |
+            GO_VERSION=1.21.3
+            wget https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz
+            sudo tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
+            echo 'export PATH=$PATH:/usr/local/go/bin' >> $BASH_ENV
+            source $BASH_ENV
+            go version
+      - run:
           name: Install Hugo
           command: |
             HUGO_VERSION=0.134.3

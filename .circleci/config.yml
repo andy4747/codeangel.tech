@@ -8,8 +8,6 @@ jobs:
     parameters:
       app_id:
         type: env_var_name
-      app_name:
-        type: env_var_name
       branch:
         type: string
     steps:
@@ -48,14 +46,13 @@ jobs:
           name: Deploy to DigitalOcean App Platform
           command: |
             doctl auth init -t ${DIGITALOCEAN_ACCESS_TOKEN}
-            doctl apps create-deployment << parameters.app_id >> --name << parameters.app_name >> --force-rebuild
+            doctl apps create-deployment << parameters.app_id >> --force-rebuild
 workflows:
   version: 2
   build-deploy-staging:
     jobs:
       - build-and-deploy:
           app_id: DIGITALOCEAN_APP_ID_STAGING
-          app_name: DIGITALOCEAN_APP_NAME_STAGING
           branch: develop
           filters:
             branches:
@@ -64,7 +61,6 @@ workflows:
     jobs:
       - build-and-deploy:
           app_id: DIGITALOCEAN_APP_ID_PRODUCTION
-          app_name: DIGITALOCEAN_APP_NAME_PRODUCTION
           branch: master
           filters:
             branches:

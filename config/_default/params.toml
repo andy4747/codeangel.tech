@@ -8,3 +8,14 @@ logo_height="80px"
 logo_webp = true #R&D webp in web apps
 logo_text="TCA"
 
+navbar_fixed = true
+
+#theme
+theme_switcher = true
+theme_default = "system" #["light", "dark", "system"]
+
+# google tag manager, see https://developers.google.com/tag-manager/
+google_tag_manager = "" #example id: G-XXXXXXXX
+
+# copyright
+copyright = "Developed by Angel Dhakal (https://codeangel.tech)"

@@ -4,6 +4,7 @@
 /assets/jsconfig.json
 public/            
 hugo_stats.json
+package-lock.json
 
 # Executable may be added to repository
 hugo.exe

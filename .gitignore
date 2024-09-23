@@ -2,7 +2,6 @@
 # Generated files by hugo
 /resources/_gen/
 /assets/jsconfig.json
-public/            
 hugo_stats.json
 package-lock.json
 

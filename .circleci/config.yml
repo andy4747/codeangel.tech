@@ -56,7 +56,7 @@ workflows:
     jobs:
       - build-and-deploy:
           app_id: DIGITALOCEAN_APP_ID_STAGING
-          app_name: "staging-codeangel"
+          app_name: DIGITALOCEAN_APP_NAME_STAGING
           branch: develop
           filters:
             branches:
@@ -66,7 +66,7 @@ workflows:
     jobs:
       - build-and-deploy:
           app_id: DIGITALOCEAN_APP_ID_PRODUCTION
-          app_name: "public-codeangel"
+          app_name: DIGITALOCEAN_APP_NAME_PRODUCTION
           branch: master
           filters:
             branches:

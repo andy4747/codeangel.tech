@@ -1,12 +1,10 @@
 version: 2.1
-
 orbs:
   node: circleci/node@5.0.2
-
 jobs:
   build-and-deploy:
     docker:
-      - image: cimg/node:14.0
+      - image: cimg/node:20.17.0
     parameters:
       app_id:
         type: env_var_name
@@ -14,8 +12,10 @@ jobs:
         type: string
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
+      - run:
+          name: install npm packages
+          command: |
+            npm install
       - run:
           name: Install Hugo
           command: |
@@ -28,6 +28,11 @@ jobs:
           command: |
             hugo version
             npm run build
+            if [ $? -ne 0 ]; then
+              echo "Build failed. Check the logs above for errors."
+              exit 1
+            fi
+            echo "Build completed successfully."      
       - run:
           name: Install doctl
           command: |
@@ -39,28 +44,7 @@ jobs:
           name: Deploy to DigitalOcean App Platform
           command: |
             doctl auth init -t ${DIGITALOCEAN_ACCESS_TOKEN}
-            doctl apps create-deployment ${\<< parameters.app_id >>} \
-              --wait \
-              --format ID \
-              --spec <(cat <<EOF
-              {
-                "name": "static",
-                "static_sites": [
-                  {
-                    "name": "web",
-                    "git": {
-                      "repo_clone_url": "${CIRCLE_REPOSITORY_URL}",
-                      "branch": "\<< parameters.branch >>"
-                    },
-                    "output_dir": "/public",
-                    "index_document": "index.html",
-                    "catchall_document": "404.html"
-                  }
-                ]
-              }
-            EOF
-            )
-
+            doctl apps create-deployment ${<< parameters.app_id >>} --wait --force-rebuild
 workflows:
   version: 2
   build-deploy-staging:
@@ -71,7 +55,6 @@ workflows:
           filters:
             branches:
               only: develop
-
   build-deploy-production:
     jobs:
       - build-and-deploy:

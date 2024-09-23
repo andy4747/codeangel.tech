@@ -35,6 +35,11 @@ jobs:
           command: |
             hugo version
             npm run build
+            if [ $? -ne 0 ]; then
+              echo "Build failed. Check the logs above for errors."
+              exit 1
+            fi
+            echo "Build completed successfully."      
       - run:
           name: Install doctl
           command: |

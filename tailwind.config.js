@@ -71,7 +71,6 @@ module.exports = {
         require('@tailwindcss/typography'),
         require('@tailwindcss/forms'),
         require('@tailwindcss/aspect-ratio'),
-        require('@tailwindcss/line-clamp'),
     ],
     darkMode: 'selector', // Enable dark mode with class strategy
 }

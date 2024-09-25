@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build-css": "tailwindcss -i ./assets/css/main.css -o ./static/css/style.css",
+    "build-css": "tailwindcss -i ./assets/css/main.css -o ./static/css/style.css && postcss ./static/css/style.css -o ./static/css/style.css",
     "dev": "npm run build-css && hugo server",
     "build": "npm run build-css && hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
     "preview": "npm run build-css && hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify"
@@ -19,6 +19,7 @@
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
     "tailwindcss": "^3.4.12"
   }
 }

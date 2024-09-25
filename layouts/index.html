@@ -1,3 +1,24 @@
-{{define "main"}}
-<p class="text-red-500">Hello This Is Angel Dhakal</p>
-{{end}}
+{{ define "main" }}
+<div class="container mx-auto px-4 py-12">
+    <div class="text-center">
+        <h1 class="text-4xl font-bold mb-4">Welcome to {{ .Site.Title }}</h1>
+        <p class="text-xl mb-8">{{ .Site.Params.author.bio }}</p>
+        <div class="flex justify-center space-x-4">
+            <a href="#" class="bg-accent-light dark:bg-accent-dark text-white font-bold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200">View Projects</a>
+            <a href="#" class="bg-secondary-light dark:bg-secondary-dark text-text-light dark:text-text-dark font-bold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200">Read Blog</a>
+        </div>
+    </div>
+    <div class="mt-16">
+        <h2 class="text-2xl font-bold mb-4">Latest Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project cards would go here -->
+            <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold mb-2">Project Name</h3>
+                <p class="mb-4">Brief description of the project goes here.</p>
+                <a href="#" class="text-accent-light dark:text-accent-dark hover:underline">Learn More</a>
+            </div>
+            <!-- Repeat for other projects -->
+        </div>
+    </div>
+</div>
+{{ end }}

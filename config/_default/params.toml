@@ -8,3 +8,15 @@ logo_height="80px"
 logo_webp = true #R&D webp in web apps
 logo_text="TCA"
 
+[author]
+name = "Angel Dhakal"
+bio = "software developer passionate about creating efficient and scalable solutions."
+
+[social]
+github = "https://github.com/yourusername"
+linkedin = "https://linkedin.com/in/yourusername"
+twitter = "https://twitter.com/yourusername"
+
+[site]
+logo = "/images/logo.png"
+favicon = "/favicon.ico"

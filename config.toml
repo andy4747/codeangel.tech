@@ -20,17 +20,6 @@ summaryLength = 40
     name = "Angel Dhakal"
     email = "angeldhakal97@gmail.com"
 
-[params]
-    title="favicon"
-    description="favicon"
-    showReadTime = 1
-    images = ["/img/favicon.png"]
-
-    [[params.social]]
-    title="Linkedin"
-    url="https://www.linkedin.com/in/angeldhakal/"
-    weight=1
-
 pageSize=8
 pagePath="page"
 
@@ -39,3 +28,25 @@ pagePath="page"
 
 [permalinks]
     blog="blog/:title"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 2
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 3
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+
+[params]
+  skills = ["Go", "Python", "Node.js", "SQL", "NoSQL", "Docker", "Kubernetes", "CI/CD", "AWS"]
+

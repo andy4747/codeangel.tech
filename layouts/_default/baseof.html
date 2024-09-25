@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html class="" lang="{{ site.LanguageCode | default `en-US` }}">
-
+<html lang="{{ .Site.LanguageCode }}" class="h-full">
 <head>
-    {{partial "essentials/head.html"}}
-    <!--TODO cache the styles-->
-    {{partial "essentials/style.html"}}
+    {{ partial "head.html" . }}
 </head>
-
-<body>
-    {{block "main" .}}
-
-    {{end}}
+<body class="flex flex-col min-h-full bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark transition-colors duration-200">
+    {{ partial "header.html" . }}
+    <main class="flex-grow">
+        {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+    <script src="{{ "js/theme-toggle.js" | relURL }}"></script>
 </body>
-
 </html>

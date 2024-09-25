@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-12">
+    <h1 class="text-3xl md:text-4xl font-bold mb-8">{{ .Title }}</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{ range .Pages }}
+        <article class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md overflow-hidden">
+            {{ with .Params.image }}
+            <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-48 object-cover">
+            {{ end }}
+            <div class="p-6">
+                <h2 class="text-xl font-bold mb-2">
+                    <a href="{{ .Permalink }}" class="hover:text-accent-light dark:hover:text-accent-dark">{{ .Title }}</a>
+                </h2>
+                <time datetime="{{ .Date.Format "2006-01-02" }}" class="text-sm text-gray-500 dark:text-gray-400">{{ .Date.Format "January 2, 2006" }}</time>
+                <p class="mt-2 text-text-light dark:text-text-dark">{{ .Summary }}</p>
+                <a href="{{ .Permalink }}" class="mt-4 inline-block text-accent-light dark:text-accent-dark hover:underline">Read More</a>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

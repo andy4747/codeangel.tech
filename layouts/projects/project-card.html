@@ -1,0 +1,15 @@
+<div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md overflow-hidden"></div>
+    {{ with .Params.image }}
+    <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-48 object-cover">
+    {{ end }}
+    <div class="p-6">
+        <h2 class="text-xl font-bold mb-2">{{ .Title }}</h2>
+        <p class="text-text-light dark:text-text-dark mb-4">{{ .Summary }}</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+            {{ range .Params.tags }}
+            <span class="bg-accent-light dark:bg-accent-dark text-white px-2 py-1 rounded text-sm">{{ . }}</span>
+            {{ end }}
+        </div>
+        <a href="{{ .Permalink }}" class="text-accent-light dark:text-accent-dark hover:underline">Learn More</a>
+    </div>
+</div>

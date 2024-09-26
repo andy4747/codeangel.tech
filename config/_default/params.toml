@@ -1,13 +1,3 @@
-favicon="images/favicon.png"
-logo="images/logo.png"
-logo_darkmode="images/logo_darkmode.png"
-
-logo_width="100px"
-logo_height="80px"
-
-logo_webp = true #R&D webp in web apps
-logo_text="TCA"
-
 [author]
 name = "Angel Dhakal"
 bio = "software developer passionate about creating efficient and scalable solutions."
@@ -20,3 +10,28 @@ twitter = "https://x.com/andydl101"
 [site]
 logo = "/images/logo.png"
 favicon = "/favicon.ico"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 2
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 3
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+
+[permalinks]
+  about = "/:filename/"
+
+
+[params]
+  skills = ["Go", "Python", "Node.js", "SQL", "NoSQL", "Docker", "Kubernetes", "CI/CD", "AWS"]

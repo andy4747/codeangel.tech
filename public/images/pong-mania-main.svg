@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#1a1a2e"/>
+  
+  <!-- Left paddle -->
+  <rect x="20" y="70" width="10" height="60" fill="#ffffff"/>
+  
+  <!-- Right paddle -->
+  <rect x="170" y="70" width="10" height="60" fill="#ffffff"/>
+  
+  <!-- Ball -->
+  <circle cx="100" cy="100" r="8" fill="#ffffff"/>
+  
+  <!-- Dotted line -->
+  <line x1="100" y1="20" x2="100" y2="180" stroke="#ffffff" stroke-width="4" stroke-dasharray="10,10"/>
+  
+  <!-- Score -->
+  <text x="80" y="40" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">11</text>
+  <text x="120" y="40" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">9</text>
+  
+  <!-- Title -->
+  <text x="100" y="190" font-family="Arial, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle">Pong Mania</text>
+</svg>

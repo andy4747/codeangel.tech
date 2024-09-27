@@ -32,6 +32,5 @@ favicon = "/favicon.ico"
 [permalinks]
   about = "/:filename/"
 
-
 [params]
   skills = ["Go", "Python", "Node.js", "SQL", "NoSQL", "Docker", "Kubernetes", "CI/CD", "AWS"]

@@ -1,0 +1,164 @@
+{
+  "author": {
+    "name": "Angel Dhakal",
+    "bio": "software developer passionate about creating efficient and scalable solutions."
+  },
+  "social": {
+    "github": "https://github.com/andy4747",
+    "linkedin": "https://linkedin.com/in/angeldhakal",
+    "twitter": "https://x.com/andydl101"
+  },
+  "site": {
+    "logo": "/images/logo.png",
+    "favicon": "/favicon.ico"
+  },
+  "params": {
+    "skills": [
+      "Go",
+      "Python",
+      "Node.js",
+      "SQL",
+      "NoSQL",
+      "Docker",
+      "CI/CD",
+      "AWS"
+    ]
+  },
+  "projects": [
+    {
+      "title": "Pong Mania",
+      "image": "/images/pong-mania-main.svg",
+      "alt": "Pong Mania",
+      "description": "A fun, engaging multiplayer experience using WebSockets.",
+      "tags": [
+        "Go",
+        "WebSockets",
+        "Multiplayer"
+      ],
+      "sourceCodeUrl": "https://github.com/andy4747/pong-mania",
+      "demoUrl": "https://pongmania.com"
+    },
+    {
+      "title": "gdocp",
+      "image": "/images/gdocp-main.svg",
+      "alt": "gdocp",
+      "description": "A handy tool for developers working with DSA notes.",
+      "tags": [
+        "Go",
+        "CLI",
+        "Library",
+        "DSA"
+      ],
+      "sourceCodeUrl": "https://github.com/andy4747/gdocp"
+    },
+    {
+      "title": "Pet Connect",
+      "image": "/images/pet-connect-main.svg",
+      "alt": "Pet Connect",
+      "description": "A platform to help pets find loving homes and report lost pets.",
+      "tags": [
+        "E-commerce",
+        "Adoption",
+        "Support"
+      ],
+      "sourceCodeUrl": "https://github.com/andy4747/pet-connect"
+    },
+    {
+      "title": "React Popular Repos",
+      "image": "/images/react-popular-repos-main.svg",
+      "alt": "React Popular Repos",
+      "description": "Showcase popular repositories to help developers find interesting projects.",
+      "tags": [
+        "React",
+        "GitHub API"
+      ],
+      "sourceCodeUrl": "https://github.com/andy4747/react-popular-repos"
+    },
+    {
+      "title": "CodeAngel",
+      "image": "/images/codeangel-main.svg",
+      "alt": "CodeAngel",
+      "description": "A personal portfolio showcasing my projects and skills.",
+      "tags": [
+        "Hugo",
+        "Portfolio"
+      ],
+      "sourceCodeUrl": "Psst... You're already here! 😉"
+    }
+  ],
+  "abouts": {
+    "profile_image": "/images/angeldhakal.jpg",
+    "skills": {
+      "languages": [
+        "Golang",
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Java",
+        "SQL",
+        "Bash"
+      ],
+      "frameworks": [
+        "Std Go HTTP package",
+        "React",
+        "Next.js",
+        "REST",
+        "GraphQL",
+        "Tailwind CSS",
+        "Hugo",
+        "Django"
+      ],
+      "tools": [
+        "AWS (EC2, SES, S3)",
+        "Terraform",
+        "CI/CD",
+        "SQL",
+        "Firebase",
+        "Git",
+        "Linux",
+        "Docker",
+        "Traefik"
+      ]
+    },
+    "experience": [
+      {
+        "title": "Software Developer",
+        "company": "readytowork-corp",
+        "location": "Remote (Chiyoda Ku, Tokyo, Japan)",
+        "date": "July 2022 - Feb 2023",
+        "responsibilities": [
+          "Developed mobile device simulation feature in React web application & created reusable React components.",
+          "Implemented intricate data validation logic, handling nested data structures effectively.",
+          "Demonstrated proficiency in MySQL, crafting complex queries including joins, sub-queries, transactions, views.",
+          "Conducted comprehensive peer code reviews to ensure code quality and best practices.",
+          "Integrated i18next into Next.js for smooth internationalization and localization."
+        ]
+      },
+      {
+        "title": "Software Developer Intern",
+        "company": "Real Time Solutions Pvt. Ltd.",
+        "location": "Lalitpur, Nepal",
+        "date": "June 2021 - Oct 2021",
+        "responsibilities": [
+          "Employed web socket connections to fetch meteorological data for interactive ReactJS dashboards.",
+          "Utilized Leaflet to dynamically map meteorological data onto geographical regions.",
+          "Containerized and deployed interactive dashboards using Docker with Nginx."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Fanshawe College",
+        "degree": "Post Graduate in Software & Information Systems Testing",
+        "location": "London, Canada",
+        "date": "Jan 2024 - Dec 2024"
+      },
+      {
+        "institution": "Itahari International College",
+        "degree": "BSc. Computing",
+        "location": "Morang, Nepal",
+        "date": "Aug 2019 - May 2022"
+      }
+    ]
+  }
+}

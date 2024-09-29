@@ -38,7 +38,9 @@
                 <!-- Project Details Section -->
                 <div class="w-2/3 p-6 flex flex-col justify-between">
                     <!-- Project Title -->
-                    <h2 class="text-xl font-bold mb-2">{{ .title }}</h2>
+                    <a href="{{.info_url}}">
+                        <h2 class="text-xl font-bold mb-2">{{ .title }}</h2>
+                    </a>
 
                     <!-- Project Description -->
                     <p class="text-text-light dark:text-text-dark mb-4">{{ .description }}</p>

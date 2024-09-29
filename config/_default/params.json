@@ -37,7 +37,8 @@
         "Multiplayer"
       ],
       "sourceCodeUrl": "https://github.com/andy4747/pong-mania",
-      "demoUrl": "https://pongmania.com"
+      "demoUrl": "https://pongmania.com",
+      "info_url": "/projects/pong-mania"
     },
     {
       "title": "gdocp",
@@ -50,7 +51,8 @@
         "Library",
         "DSA"
       ],
-      "sourceCodeUrl": "https://github.com/andy4747/gdocp"
+      "sourceCodeUrl": "https://github.com/andy4747/gdocp",
+      "info_url": "/projects/gdocp"
     },
     {
       "title": "Pet Connect",
@@ -62,7 +64,8 @@
         "Adoption",
         "Support"
       ],
-      "sourceCodeUrl": "https://github.com/andy4747/pet-connect"
+      "sourceCodeUrl": "https://github.com/andy4747/pet-connect",
+      "info_url": "/projects/pet-connect"
     },
     {
       "title": "React Popular Repos",
@@ -73,7 +76,8 @@
         "React",
         "GitHub API"
       ],
-      "sourceCodeUrl": "https://github.com/andy4747/react-popular-repos"
+      "sourceCodeUrl": "https://github.com/andy4747/react-popular-repos",
+      "info_url": "/projects/react-popular-repos"
     },
     {
       "title": "CodeAngel",
@@ -84,7 +88,7 @@
         "Hugo",
         "Portfolio"
       ],
-      "sourceCodeUrl": "Psst... You're already here! 😉"
+      "info_url": "/projects/codeangel"
     }
   ],
 "abouts": {

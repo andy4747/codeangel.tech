@@ -29,49 +29,34 @@
     </div>
     <div class="mb-16">
         <h3 class="text-2xl font-bold mb-8 pb-2 text-text-light dark:text-text-dark">
-            Skills</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md">
-                <h4 class="text-xl font-semibold mb-4 flex items-center text-text-light dark:text-text-dark">
-                    <i class="fas fa-code mr-2 text-accent-light dark:text-accent-dark"></i>
-                    Languages
-                </h4>
-                <ul class="space-y-2">
-                    {{ range .Site.Params.abouts.skills.languages }}
-                    <li class="flex items-center text-text-light dark:text-text-dark">
-                        <i class="{{ .icon }} mr-2 text-accent-light dark:text-accent-dark"></i>
-                        {{ .name }}
-                    </li>
-                    {{ end }}
-                </ul>
-            </div>
-            <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md">
-                <h4 class="text-xl font-semibold mb-4 flex items-center text-text-light dark:text-text-dark">
-                    <i class="fas fa-layer-group mr-2 text-accent-light dark:text-accent-dark"></i>
-                    Libraries & Frameworks
-                </h4>
-                <ul class="space-y-2">
-                    {{ range .Site.Params.abouts.skills.frameworks }}
-                    <li class="flex items-center text-text-light dark:text-text-dark">
-                        <i class="{{ .icon }} mr-2 text-accent-light dark:text-accent-dark"></i>
-                        {{ .name }}
-                    </li>
-                    {{ end }}
-                </ul>
-            </div>
-            <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md">
-                <h4 class="text-xl font-semibold mb-4 flex items-center text-text-light dark:text-text-dark">
-                    <i class="fas fa-tools mr-2 text-accent-light dark:text-accent-dark"></i>
-                    Cloud & Other Tools
-                </h4>
-                <ul class="space-y-2">
-                    {{ range .Site.Params.abouts.skills.tools }}
-                    <li class="flex items-center text-text-light dark:text-text-dark">
-                        <i class="{{ .icon }} mr-2 text-accent-light dark:text-accent-dark"></i>
-                        {{ .name }}
-                    </li>
-                    {{ end }}
-                </ul>
+            Skills
+        </h3>
+        <div class="relative overflow-hidden bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md">
+            <div class="skills-slider flex animate-slide">
+                {{ $skills := slice }}
+                {{ range .Site.Params.abouts.skills.languages }}
+                    {{ $skills = $skills | append . }}
+                {{ end }}
+                {{ range .Site.Params.abouts.skills.frameworks }}
+                    {{ $skills = $skills | append . }}
+                {{ end }}
+                {{ range .Site.Params.abouts.skills.tools }}
+                    {{ $skills = $skills | append . }}
+                {{ end }}
+                
+                {{ range $skills }}
+                    <div class="flex flex-col items-center justify-center mx-4 min-w-[100px]">
+                        <i class="{{ .icon }} text-3xl mb-2 text-accent-light dark:text-accent-dark"></i>
+                        <span class="text-sm text-text-light dark:text-text-dark">{{ .name }}</span>
+                    </div>
+                {{ end }}
+                <!-- Duplicate skills for seamless looping -->
+                {{ range $skills }}
+                    <div class="flex flex-col items-center justify-center mx-4 min-w-[100px]">
+                        <i class="{{ .icon }} text-3xl mb-2 text-accent-light dark:text-accent-dark"></i>
+                        <span class="text-sm text-text-light dark:text-text-dark">{{ .name }}</span>
+                    </div>
+                {{ end }}
             </div>
         </div>
     </div>
@@ -123,4 +108,18 @@
         </div>
     </div>
 </div>
+<style>
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+    
+    .animate-slide {
+        animation: slide 30s linear infinite;
+    }
+</style>
 {{ end }}

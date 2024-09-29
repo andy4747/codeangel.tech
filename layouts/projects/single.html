@@ -1,0 +1,63 @@
+{{ define "main" }}
+<section class="section pt-7">
+  <div class="container mx-auto">
+    <div class="row justify-center">
+      <article class="lg:col-10">
+        <div class="mb-10">
+          <img src="{{ .Params.image }}" width="1200px" class="mx-auto" alt="Pong Mania">
+        </div>
+        <h1 class="text-2xl font-bold mb-4">
+          {{ .Title }}
+        </h1>
+        <ul class="mb-4">
+          <li class="mr-4 inline-block">
+            <a href="{{ `authors/` | relLangURL }}{{ .Params.Author | urlize }}/">
+              <i class="fa-regular fa-circle-user mr-2"></i>{{ .Params.author }}
+            </a>
+          </li>
+          {{ $categories:= .Params.categories }}
+          {{ if $categories }}
+          <li class="mr-4 inline-block">
+            <i class="fa-regular fa-folder mr-2"></i>
+            {{ range $i,$p:= $categories }}
+            <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/">
+              {{ . | humanize }}{{ if ne $i (sub (len $categories) 1) }}
+              {{ "," }}
+              {{ end }}
+            </a>
+            {{ end }}
+          </li>
+          {{ end }}
+          <li class="mr-4 inline-block">
+            <i class="fa-regular fa-clock mr-2"></i>
+            {{ time.Format ":date_long" .PublishDate }}
+          </li>
+        </ul>
+        <div class="row items-start justify-between">
+          {{ $tags:= .Params.tags }}
+          {{ if $tags }}
+          <div class="lg:col-5 mb-10 flex items-center lg:mb-0">
+            <ul>
+              {{ range $i,$p:= $tags }}
+              <li class="inline-block">
+                <a class="bg-theme-light hover:bg-primary dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark m-1 block rounded px-3 py-1 hover:text-white"
+                  href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
+                  <span class="bg-accent-light dark:bg-accent-dark text-white px-2 py-1 rounded text-sm">{{ . | humanize
+                    }}</span>
+                </a>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }}
+        </div>
+        <div class="prose dark:prose-dark max-w-full mx-auto mb-10">
+          {{ partial "toc.html" . }}
+          {{ .Content }}
+        </div>
+    </div>
+    </article>
+  </div>
+  </div>
+</section>
+{{ end }}

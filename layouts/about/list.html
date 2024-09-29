@@ -3,85 +3,121 @@
     {{$abouts := .Site.Params.abouts}}
     <div class="flex flex-col md:flex-row items-center mb-12">
         <img src="{{ $abouts.profile_image }}" alt="{{ .Params.name }}"
-            class="w-64 h-64 rounded-full object-cover mb-6 md:mb-0 md:mr-8">
+            class="w-64 h-64 rounded-full object-cover mb-6 md:mb-0 md:mr-8 shadow-lg border-4 border-accent-light dark:border-accent-dark">
         <div>
-            <h2 class="text-2xl font-semibold mb-4">{{ .Site.Params.author.name }}</h2>
-            <p class="text-lg mb-4">{{ .Site.Params.author.bio }}</p>
-            <div class="flex space-x-4">
-                <a href="mailto:{{ .Site.Params.social.email }}" class="text-blue-500 hover:text-blue-700">
-                    <i class="fa-solid fa-envelope"></i>
+            <h2 class="text-3xl font-bold mb-4 text-text-light dark:text-text-dark">{{ .Site.Params.author.name }}</h2>
+            <p class="text-xl mb-6 text-text-light dark:text-text-dark">{{ .Site.Params.author.bio }}</p>
+            <div class="flex space-x-6">
+                <a href="mailto:{{ .Site.Params.social.email }}"
+                    class="text-accent-light dark:text-accent-dark hover:text-opacity-80 transition-colors duration-200">
+                    <i class="fas fa-envelope text-2xl"></i>
                 </a>
                 <a href="{{ .Site.Params.social.website }}" target="_blank" rel="noopener noreferrer"
-                    class="text-blue-500 hover:text-blue-700">
-                    <i class="fa-solid fa-globe"></i>
+                    class="text-accent-light dark:text-accent-dark hover:text-opacity-80 transition-colors duration-200">
+                    <i class="fas fa-globe text-2xl"></i>
                 </a>
                 <a href="{{ .Site.Params.social.github}}" target="_blank" rel="noopener noreferrer"
-                    class="text-blue-500 hover:text-blue-700">
-                    <i class="fa-brands fa-github"></i>
+                    class="text-accent-light dark:text-accent-dark hover:text-opacity-80 transition-colors duration-200">
+                    <i class="fab fa-github text-2xl"></i>
                 </a>
                 <a href="{{ .Site.Params.social.linkedin }}" target="_blank" rel="noopener noreferrer"
-                    class="text-blue-500 hover:text-blue-700">
-                    <i class="fa-brands fa-linkedin"></i>
+                    class="text-accent-light dark:text-accent-dark hover:text-opacity-80 transition-colors duration-200">
+                    <i class="fab fa-linkedin text-2xl"></i>
                 </a>
             </div>
         </div>
     </div>
-
-    <div class="mb-12">
-        <h3 class="text-2xl font-semibold mb-4">Skills</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-                <h4 class="text-xl font-medium mb-2">Languages</h4>
-                <ul class="list-disc list-inside">
+    <div class="mb-16">
+        <h3 class="text-2xl font-bold mb-8 pb-2 text-text-light dark:text-text-dark">
+            Skills</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md">
+                <h4 class="text-xl font-semibold mb-4 flex items-center text-text-light dark:text-text-dark">
+                    <i class="fas fa-code mr-2 text-accent-light dark:text-accent-dark"></i>
+                    Languages
+                </h4>
+                <ul class="space-y-2">
                     {{ range .Site.Params.abouts.skills.languages }}
-                    <li>{{ . }}</li>
+                    <li class="flex items-center text-text-light dark:text-text-dark">
+                        <i class="{{ .icon }} mr-2 text-accent-light dark:text-accent-dark"></i>
+                        {{ .name }}
+                    </li>
                     {{ end }}
                 </ul>
             </div>
-            <div>
-                <h4 class="text-xl font-medium mb-2">Libraries & Frameworks</h4>
-                <ul class="list-disc list-inside">
+            <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md">
+                <h4 class="text-xl font-semibold mb-4 flex items-center text-text-light dark:text-text-dark">
+                    <i class="fas fa-layer-group mr-2 text-accent-light dark:text-accent-dark"></i>
+                    Libraries & Frameworks
+                </h4>
+                <ul class="space-y-2">
                     {{ range .Site.Params.abouts.skills.frameworks }}
-                    <li>{{ . }}</li>
+                    <li class="flex items-center text-text-light dark:text-text-dark">
+                        <i class="{{ .icon }} mr-2 text-accent-light dark:text-accent-dark"></i>
+                        {{ .name }}
+                    </li>
                     {{ end }}
                 </ul>
             </div>
-            <div>
-                <h4 class="text-xl font-medium mb-2">Cloud & Other Tools</h4>
-                <ul class="list-disc list-inside">
+            <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md">
+                <h4 class="text-xl font-semibold mb-4 flex items-center text-text-light dark:text-text-dark">
+                    <i class="fas fa-tools mr-2 text-accent-light dark:text-accent-dark"></i>
+                    Cloud & Other Tools
+                </h4>
+                <ul class="space-y-2">
                     {{ range .Site.Params.abouts.skills.tools }}
-                    <li>{{ . }}</li>
+                    <li class="flex items-center text-text-light dark:text-text-dark">
+                        <i class="{{ .icon }} mr-2 text-accent-light dark:text-accent-dark"></i>
+                        {{ .name }}
+                    </li>
                     {{ end }}
                 </ul>
             </div>
         </div>
     </div>
-
-    <div class="mb-12">
-        <h3 class="text-2xl font-semibold mb-4">Experience</h3>
-        <div class="space-y-6">
+    <div class="mb-16">
+        <h3 class="text-2xl font-bold mb-8 pb-2 text-text-light dark:text-text-dark">
+            Experience</h3>
+        <div class="space-y-8">
             {{ range .Site.Params.abouts.experience }}
-            <div>
-                <h4 class="text-xl font-medium">{{ .title }} | {{ .company }}</h4>
-                <p class="text-gray-600">{{ .location }} | {{ .date }}</p>
-                <ul class="list-disc list-inside mt-2">
+            <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md">
+                <h4 class="text-xl font-semibold mb-2 text-text-light dark:text-text-dark">{{ .title }} | {{ .company }}
+                </h4>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                    <i class="fas fa-map-marker-alt mr-2 text-accent-light dark:text-accent-dark"></i>{{ .location }} |
+                    <i class="far fa-calendar-alt ml-2 mr-2 text-accent-light dark:text-accent-dark"></i>{{ .date }}
+                </p>
+                <ul class="space-y-2">
                     {{ range .responsibilities }}
-                    <li>{{ . }}</li>
+                    <li class="flex items-start text-text-light dark:text-text-dark">
+                        <i class="fas fa-chevron-right mr-2 mt-1 text-accent-light dark:text-accent-dark"></i>
+                        <span>{{ . }}</span>
+                    </li>
                     {{ end }}
                 </ul>
             </div>
             {{ end }}
         </div>
     </div>
-
     <div>
-        <h3 class="text-2xl font-semibold mb-4">Education</h3>
-        <div class="space-y-4">
+        <h3 class="text-2xl font-bold mb-8 pb-2 text-text-light dark:text-text-dark">
+            Education</h3>
+        <div class="space-y-6">
             {{ range .Site.Params.abouts.education }}
-            <div>
-                <h4 class="text-xl font-medium">{{ .institution }}</h4>
-                <p>{{ .degree }} | {{ .location }}</p>
-                <p class="text-gray-600">{{ .date }}</p>
+            <div class="bg-secondary-light dark:bg-secondary-dark p-6 rounded-lg shadow-md">
+                <h4 class="text-xl font-semibold mb-2 text-text-light dark:text-text-dark">{{ .institution }}</h4>
+                <p class="mb-1 text-text-light dark:text-text-dark">
+                    <i class="fas fa-graduation-cap mr-2 text-accent-light dark:text-accent-dark"></i>
+                    {{ .degree }}
+                </p>
+                <p class="mb-1 text-text-light dark:text-text-dark">
+                    <i class="fas fa-map-marker-alt mr-2 text-accent-light dark:text-accent-dark"></i>
+                    {{ .location }}
+                </p>
+                <p class="text-gray-600 dark:text-gray-400">
+                    <i class="far fa-calendar-alt mr-2 text-accent-light dark:text-accent-dark"></i>
+                    {{ .date }}
+                </p>
             </div>
             {{ end }}
         </div>

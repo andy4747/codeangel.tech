@@ -15,7 +15,7 @@ module.exports = {
                 },
                 secondary: {
                     light: '#e2e8f0',
-                    dark: '#0a0a0a',
+                    dark: '#1a1a1a',
                 },
                 text: {
                     light: '#334155',
@@ -30,12 +30,12 @@ module.exports = {
                 error: '#ef4444',
                 button: {
                     github: {
-                        light: '#3b82f6',  // Same as accent light
-                        dark: '#60a5fa',   // Same as accent dark
+                        light: '#3b82f6',
+                        dark: '#60a5fa',
                     },
                     demo: {
-                        success: '#22c55e', // Same as success color
-                        hover: '#16a34a',   // Darker green for hover effect
+                        success: '#22c55e',
+                        hover: '#16a34a',
                     },
                 },
             },
@@ -75,6 +75,10 @@ module.exports = {
                     },
                 },
             }),
+            boxShadow: {
+                'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            },
         },
     },
     plugins: [
@@ -84,4 +88,3 @@ module.exports = {
     ],
     darkMode: 'class',
 };
-

@@ -1,29 +1,28 @@
 {{ define "main" }}
 <div class="container mx-auto px-4 py-12">
-    <div class="text-center">
-        <h1 class="text-4xl font-bold mb-4">Hello, I'm Angel Dhakal</h1>
-        <p class="text-xl mb-8">Software developer passionate about creating efficient and scalable solutions.</p>
-        <div class="flex justify-center space-x-4 mb-8">
-            <a href="/projects"
-                class="bg-accent-light dark:bg-accent-dark text-white font-bold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200">View
-                Projects</a>
-            <a href="/about"
-                class="bg-secondary-light dark:bg-secondary-dark text-text-light dark:text-text-dark font-bold py-2 px-4 rounded hover:opacity-90 transition-opacity duration-200">About
-                Me</a>
+    <!-- Hero Section -->
+    <div class="flex flex-col md:flex-row items-center justify-between mb-12">
+        <div class="text-center md:text-left md:w-1/2">
+            <h1 class="text-4xl font-bold mb-4">Hello, I'm Angel Dhakal</h1>
+            <p class="text-xl mb-8">Software developer passionate about creating efficient and scalable solutions.</p>
+            <div class="flex justify-center md:justify-start space-x-4 mb-8">
+                <a href="/projects"
+                    class="bg-gradient-to-r from-blue-400 to-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:shadow-lg transition-shadow duration-200">View
+                    Projects</a>
+                <a href="/about"
+                    class="bg-gradient-to-r from-green-400 to-green-600 text-white font-bold py-2 px-4 rounded-lg hover:shadow-lg transition-shadow duration-200">About
+                    Me</a>
+            </div>
+        </div>
+        <!-- Developer SVG Section -->
+        <div class="md:w-1/2 mt-8 md:mt-0">
+            <img src="/images/hero.svg" alt="Developer working on multiple monitors" class="w-full h-auto object-cover">
         </div>
     </div>
 
+    <!-- Featured Projects Section -->
     <div class="mt-16">
-        <h2 class="text-2xl font-bold mb-4">Skills & Expertise</h2>
-        <div class="flex flex-wrap gap-2 mb-12">
-            {{range .Site.Params.params.skills}}
-            <span class="bg-accent-light dark:bg-accent-dark text-white px-3 py-1 rounded-full text-sm">{{.}}</span>
-            {{end}}
-        </div>
-    </div>
-
-    <div class="mt-16">
-        <h2 class="text-2xl font-bold mb-4">Featured Projects</h2>
+        <h2 class="text-2xl font-bold mb-4 text-center md:text-left">Featured Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {{ range first 3 .Site.Params.projects }}
             <div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md flex overflow-hidden">
@@ -57,7 +56,7 @@
                         <!-- Source Code (GitHub) Conditional Rendering -->
                         {{ if .sourceCodeUrl }}
                         <a href="{{ .sourceCodeUrl }}" target="_blank"
-                            class="bg-red-100 dark:bg-red-100 text-gray-500 px-2 py-1 rounded-3xl hover:bg-accent-dark">
+                            class="bg-red-500 dark:bg-red-500 text-white px-2 py-1 rounded-3xl hover:bg-accent-dark">
                             View Code
                         </a>
                         {{ end }}
@@ -72,6 +71,7 @@
                     </div>
                 </div>
             </div>
+
             {{end}}
         </div>
     </div>

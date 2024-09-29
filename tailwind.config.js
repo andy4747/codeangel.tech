@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     content: [
@@ -10,24 +10,34 @@ module.exports = {
         extend: {
             colors: {
                 primary: {
-                    light: '#f0f4f8', // Light blue-gray for light mode background
-                    dark: '#1a202c', // Dark blue-gray for dark mode background
+                    light: '#f8fafc',
+                    dark: '#000000',
                 },
                 secondary: {
-                    light: '#e2e8f0', // Lighter blue-gray for secondary background in light mode
-                    dark: '#2d3748', // Darker blue-gray for secondary background in dark mode
+                    light: '#e2e8f0',
+                    dark: '#1a1a1a',
                 },
                 text: {
-                    light: '#2d3748', // Dark blue-gray for text in light mode
-                    dark: '#e2e8f0', // Light blue-gray for text in dark mode
+                    light: '#334155',
+                    dark: '#ffffff',
                 },
                 accent: {
-                    light: '#4299e1', // Blue for accents in light mode
-                    dark: '#63b3ed', // Lighter blue for accents in dark mode
+                    light: '#3b82f6',
+                    dark: '#60a5fa',
                 },
-                success: '#48bb78', // Green for success messages
-                warning: '#ed8936', // Orange for warnings
-                error: '#ef4444', // Red for errors
+                success: '#22c55e',
+                warning: '#f97316',
+                error: '#ef4444',
+                button: {
+                    github: {
+                        light: '#3b82f6',
+                        dark: '#60a5fa',
+                    },
+                    demo: {
+                        success: '#22c55e',
+                        hover: '#16a34a',
+                    },
+                },
             },
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
@@ -65,6 +75,10 @@ module.exports = {
                     },
                 },
             }),
+            boxShadow: {
+                'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            },
         },
     },
     plugins: [
@@ -72,5 +86,5 @@ module.exports = {
         require('@tailwindcss/forms'),
         require('@tailwindcss/aspect-ratio'),
     ],
-    darkMode: 'selector', // Enable dark mode with class strategy
-}
+    darkMode: 'class',
+};

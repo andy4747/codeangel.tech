@@ -1,0 +1,19 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/",
+      "weight": 1
+    },
+    {
+      "name": "Projects",
+      "url": "/projects/",
+      "weight": 2
+    },
+    {
+      "name": "About",
+      "url": "/about/",
+      "weight": 3
+    }
+  ]
+}

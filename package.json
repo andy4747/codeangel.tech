@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build-css": "tailwindcss -i ./assets/css/main.css -o ./static/css/style.css && postcss ./static/css/style.css -o ./static/css/style.css",
-    "dev": "npm run build-css && hugo server",
+    "dev": "npm run build-css && hugo server --verbose --disableFastRender",
     "build": "npm run build-css && hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
     "preview": "npm run build-css && hugo server --disableFastRender --navigateToChanged --templateMetrics --templateMetricsHints --watch --forceSyncStatic -e production --minify"
   },

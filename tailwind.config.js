@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     content: [
@@ -10,24 +10,34 @@ module.exports = {
         extend: {
             colors: {
                 primary: {
-                    light: '#f0f4f8', // Light blue-gray for light mode background
-                    dark: '#1a202c', // Dark blue-gray for dark mode background
+                    light: '#f8fafc',
+                    dark: '#000000',
                 },
                 secondary: {
-                    light: '#e2e8f0', // Lighter blue-gray for secondary background in light mode
-                    dark: '#2d3748', // Darker blue-gray for secondary background in dark mode
+                    light: '#e2e8f0',
+                    dark: '#0a0a0a',
                 },
                 text: {
-                    light: '#2d3748', // Dark blue-gray for text in light mode
-                    dark: '#e2e8f0', // Light blue-gray for text in dark mode
+                    light: '#334155',
+                    dark: '#ffffff',
                 },
                 accent: {
-                    light: '#4299e1', // Blue for accents in light mode
-                    dark: '#63b3ed', // Lighter blue for accents in dark mode
+                    light: '#3b82f6',
+                    dark: '#60a5fa',
                 },
-                success: '#48bb78', // Green for success messages
-                warning: '#ed8936', // Orange for warnings
-                error: '#ef4444', // Red for errors
+                success: '#22c55e',
+                warning: '#f97316',
+                error: '#ef4444',
+                button: {
+                    github: {
+                        light: '#3b82f6',  // Same as accent light
+                        dark: '#60a5fa',   // Same as accent dark
+                    },
+                    demo: {
+                        success: '#22c55e', // Same as success color
+                        hover: '#16a34a',   // Darker green for hover effect
+                    },
+                },
             },
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
@@ -72,5 +82,6 @@ module.exports = {
         require('@tailwindcss/forms'),
         require('@tailwindcss/aspect-ratio'),
     ],
-    darkMode: 'selector', // Enable dark mode with class strategy
-}
+    darkMode: 'class',
+};
+

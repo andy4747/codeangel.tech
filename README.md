@@ -2,4 +2,4 @@
 
 https://codeangel.tech
 
-Latest Staging: https://staging-codeangel-xnqzh.ondigitalocean.app/ (build test)
+Latest Staging: https://codeangel-tech-staging-iycyp.ondigitalocean.app/

@@ -1,5 +1,13 @@
 {
     "baseURL": "https://codeangel.tech",
     "languageCode": "en-us",
-    "title": "codeangel"
+    "title": "codeangel",
+    "tableOfContents": true,
+    "markup": {
+        "tableOfContents": {
+            "startLevel": 2,
+            "endLeve": 5,
+            "ordered": true
+        }
+    }
 }

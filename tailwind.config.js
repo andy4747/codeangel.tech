@@ -20,6 +20,7 @@ module.exports = {
                 text: {
                     light: '#334155',
                     dark: '#ffffff',
+                    gray: '#6b7280'
                 },
                 accent: {
                     light: '#3b82f6',
@@ -51,12 +52,21 @@ module.exports = {
                         a: {
                             color: theme('colors.accent.light'),
                             '&:hover': {
-                                color: theme('colors.accent.light'),
+                                color: theme('colors.accent.dark'),
                             },
                         },
                         'h1, h2, h3, h4': {
                             color: theme('colors.text.light'),
                             fontWeight: '700',
+                        },
+                        p: {
+                            color: theme('colors.text.light'),
+                        },
+                        ol: {
+                            color: theme('colors.text.light'),
+                        },
+                        ul: {
+                            color: theme('colors.text.light'),
                         },
                     },
                 },
@@ -66,15 +76,28 @@ module.exports = {
                         a: {
                             color: theme('colors.accent.dark'),
                             '&:hover': {
-                                color: theme('colors.accent.dark'),
+                                color: theme('colors.accent.light'),
                             },
                         },
                         'h1, h2, h3, h4': {
                             color: theme('colors.text.dark'),
                         },
+                        p: {
+                            color: theme('colors.text.dark'),
+                        },
+                        ol: {
+                            color: theme('colors.text.dark'),
+                        },
+                        ul: {
+                            color: theme('colors.text.dark'),
+                        },
+                        strong: {
+                            color: theme("colors.text.gray"),
+                        }
                     },
                 },
             }),
+
             boxShadow: {
                 'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
                 'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',

@@ -8,7 +8,7 @@ image: "/images/pong-mania-main.svg"
 tags: ["Golang", "HTMX", "WebSockets", "AWS", "PostgreSQL", "CircleCI", "Docker"]
 categories: ["Application", "Real Time", "Game"]
 demoUrl: "https://pongmania.com"
-info_url: "/projects/pong-mania.md"
+info_url: "/projects/pong-mania"
 sourceCodeUrl: "https://github.com/andy4747/pong-mania"
 draft: false
 ---

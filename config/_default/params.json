@@ -31,11 +31,7 @@
       "image": "/images/pong-mania-main.svg",
       "alt": "Pong Mania",
       "description": "A fun, engaging multiplayer experience using WebSockets.",
-      "tags": [
-        "Go",
-        "WebSockets",
-        "Multiplayer"
-      ],
+      "tags": ["Golang", "HTMX", "WebSockets", "AWS", "PostgreSQL", "CircleCI", "Docker"],
       "sourceCodeUrl": "https://github.com/andy4747/pong-mania",
       "demoUrl": "https://pongmania.com",
       "info_url": "/projects/pong-mania"
@@ -46,7 +42,7 @@
       "alt": "gdocp",
       "description": "A handy tool for developers working with DSA notes.",
       "tags": [
-        "Go",
+        "Golang",
         "CLI",
         "Library",
         "DSA"
@@ -74,6 +70,7 @@
       "description": "Showcase popular repositories to help developers find interesting projects.",
       "tags": [
         "React",
+        "REST",
         "GitHub API"
       ],
       "sourceCodeUrl": "https://github.com/andy4747/react-popular-repos",
@@ -86,7 +83,8 @@
       "description": "A personal portfolio showcasing my projects and skills.",
       "tags": [
         "Hugo",
-        "Portfolio"
+        "Portfolio",
+        "TailwindCSS"
       ],
       "info_url": "/projects/codeangel"
     }

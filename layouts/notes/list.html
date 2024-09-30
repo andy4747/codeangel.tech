@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">My Notes</h1>
+    
+    {{ with .Site.GetPage "/notes/_index.md" }}
+        {{ if .Content }}
+            <div class="mb-8">
+                {{ .Content }}
+            </div>
+        {{ end }}
+    {{ end }}
+    
+    <div class="space-y-6">
+        {{ range .Pages }}
+           {{partial "note-card.html" .}} 
+        {{ end }}
+    </div>
+</div>
+{{ end }}

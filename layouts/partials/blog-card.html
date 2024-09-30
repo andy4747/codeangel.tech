@@ -1,0 +1,28 @@
+<article class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md overflow-hidden">
+    {{ with .Params.image }}
+    <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-48 object-cover">
+    {{ end }}
+    <div class="p-6">
+        <h2 class="text-xl font-bold mb-2">
+            <a href="{{ .Permalink }}" class="hover:text-accent-light dark:hover:text-accent-dark">{{ .Title }}</a>
+        </h2>
+        <time datetime="{{ .Date.Format "2006-01-02" }}" class="text-sm text-gray-500 dark:text-gray-400">{{ .Date.Format "January 2, 2006" }}</time>
+
+        <p class="mt-2 text-text-light dark:text-text-dark line-clamp">{{ .Summary }}</p>
+        
+        <!-- View Blog link -->
+        <a href="{{ .Permalink }}"
+            class="mt-4 inline-block text-accent-light dark:text-accent-dark hover:underline">View Blog</a>
+    </div>
+</article>
+
+<style>
+    .line-clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        /* Limit to 3 lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>

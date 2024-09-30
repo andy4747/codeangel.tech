@@ -9,5 +9,10 @@
             "endLeve": 5,
             "ordered": true
         }
+    },
+    "services": {
+        "disqus": {
+            "shortname": "codeangel-1"
+        }
     }
 }

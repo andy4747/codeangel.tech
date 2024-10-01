@@ -3,8 +3,7 @@ title: "Leetcod 217: Contains Duplicate"
 date: 2024-09-29
 tags: ["DSA", "Data Structure", "Algorithms", "Note", "Arrays", "Hashmap", "leetcode", "neetcode"]
 images: [
-    "https://i.pinimg.com/474x/c3/c2/05/c3c20561f69db03c456a68ab0b4fc33c.jpg",
-    "https://i.pinimg.com/originals/ea/b6/20/eab6203681c0493206436b91bd376752.jpg"
+    "/images/notes/leetcode-217-contains-duplicate/leetcode-217-contains-duplicate.jpg"
 ]
 draft: false
 ---

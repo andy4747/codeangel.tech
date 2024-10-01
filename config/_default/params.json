@@ -13,83 +13,7 @@
     "logo": "/images/logo.png",
     "favicon": "/favicon.ico"
   },
-  "params": {
-    "skills": [
-      "Go",
-      "Python",
-      "Node.js",
-      "SQL",
-      "NoSQL",
-      "Docker",
-      "CI/CD",
-      "AWS"
-    ]
-  },
-  "projects": [
-    {
-      "title": "Pong Mania",
-      "image": "/images/pong-mania-main.svg",
-      "alt": "Pong Mania",
-      "description": "A fun, engaging multiplayer experience using WebSockets.",
-      "tags": ["Golang", "HTMX", "WebSockets", "AWS", "PostgreSQL", "CircleCI", "Docker"],
-      "sourceCodeUrl": "https://github.com/andy4747/pong-mania",
-      "demoUrl": "https://pongmania.com",
-      "info_url": "/projects/pong-mania"
-    },
-    {
-      "title": "gdocp",
-      "image": "/images/gdocp-main.svg",
-      "alt": "gdocp",
-      "description": "A handy tool for developers working with DSA notes.",
-      "tags": [
-        "Golang",
-        "CLI",
-        "Library",
-        "DSA"
-      ],
-      "sourceCodeUrl": "https://github.com/andy4747/gdocp",
-      "info_url": "/projects/gdocp"
-    },
-    {
-      "title": "Pet Connect",
-      "image": "/images/pet-connect-main.svg",
-      "alt": "Pet Connect",
-      "description": "A platform to help pets find loving homes and report lost pets.",
-      "tags": [
-        "E-commerce",
-        "Adoption",
-        "Support"
-      ],
-      "sourceCodeUrl": "https://github.com/andy4747/pet-connect",
-      "info_url": "/projects/pet-connect"
-    },
-    {
-      "title": "React Popular Repos",
-      "image": "/images/react-popular-repos-main.svg",
-      "alt": "React Popular Repos",
-      "description": "Showcase popular repositories to help developers find interesting projects.",
-      "tags": [
-        "React",
-        "REST",
-        "GitHub API"
-      ],
-      "sourceCodeUrl": "https://github.com/andy4747/react-popular-repos",
-      "info_url": "/projects/react-popular-repos"
-    },
-    {
-      "title": "CodeAngel",
-      "image": "/images/codeangel-main.svg",
-      "alt": "CodeAngel",
-      "description": "A personal portfolio showcasing my projects and skills.",
-      "tags": [
-        "Hugo",
-        "Portfolio",
-        "TailwindCSS"
-      ],
-      "info_url": "/projects/codeangel"
-    }
-  ],
-"abouts": {
+  "abouts": {
     "profile_image": "/images/angeldhakal.jpg",
     "skills": {
       "languages": [
@@ -155,7 +79,7 @@
         "institution": "Fanshawe College",
         "degree": "Post Graduate in Software & Information Systems Testing",
         "location": "London, Canada",
-        "date": "Jan 2024 - Dec 2024"
+        "date": "Jan 2024 - Aug 2024"
       },
       {
         "institution": "Itahari International College",

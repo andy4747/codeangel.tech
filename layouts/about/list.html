@@ -72,14 +72,6 @@
                     <i class="fas fa-map-marker-alt mr-2 text-accent-light dark:text-accent-dark"></i>{{ .location }} |
                     <i class="far fa-calendar-alt ml-2 mr-2 text-accent-light dark:text-accent-dark"></i>{{ .date }}
                 </p>
-                <ul class="space-y-2">
-                    {{ range .responsibilities }}
-                    <li class="flex items-start text-text-light dark:text-text-dark">
-                        <i class="fas fa-chevron-right mr-2 mt-1 text-accent-light dark:text-accent-dark"></i>
-                        <span>{{ . }}</span>
-                    </li>
-                    {{ end }}
-                </ul>
             </div>
             {{ end }}
         </div>

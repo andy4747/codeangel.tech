@@ -17,64 +17,125 @@
     "profile_image": "/images/angeldhakal.jpg",
     "skills": {
       "languages": [
-        {"name": "Golang", "icon": "fab fa-golang"},
-        {"name": "JavaScript", "icon": "fab fa-js-square"},
-        {"name": "TypeScript", "icon": "fab fa-js"},
-        {"name": "Python", "icon": "fab fa-python"},
-        {"name": "Java", "icon": "fab fa-java"},
-        {"name": "SQL", "icon": "fas fa-database"},
-        {"name": "Bash", "icon": "fas fa-terminal"}
+        {
+          "name": "Golang",
+          "icon": "fab fa-golang"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "fab fa-js-square"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "fab fa-js"
+        },
+        {
+          "name": "Python",
+          "icon": "fab fa-python"
+        },
+        {
+          "name": "Java",
+          "icon": "fab fa-java"
+        },
+        {
+          "name": "SQL",
+          "icon": "fas fa-database"
+        },
+        {
+          "name": "Bash",
+          "icon": "fas fa-terminal"
+        }
       ],
       "frameworks": [
-        {"name": "Standard Go Library", "icon": "fab fa-golang"},
-        {"name": "React", "icon": "fab fa-react"},
-        {"name": "Next.js", "icon": "fab fa-react"},
-        {"name": "REST", "icon": "fas fa-exchange-alt"},
-        {"name": "GraphQL", "icon": "fas fa-project-diagram"},
-        {"name": "Tailwind CSS", "icon": "fab fa-css3-alt"},
-        {"name": "Hugo", "icon": "fas fa-h-square"},
-        {"name": "Django", "icon": "fab fa-python"}
+        {
+          "name": "Standard Go Library",
+          "icon": "fab fa-golang"
+        },
+        {
+          "name": "React",
+          "icon": "fab fa-react"
+        },
+        {
+          "name": "Next.js",
+          "icon": "fab fa-react"
+        },
+        {
+          "name": "REST",
+          "icon": "fas fa-exchange-alt"
+        },
+        {
+          "name": "GraphQL",
+          "icon": "fas fa-project-diagram"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "fab fa-css3-alt"
+        },
+        {
+          "name": "Hugo",
+          "icon": "fas fa-h-square"
+        },
+        {
+          "name": "Django",
+          "icon": "fab fa-python"
+        }
       ],
       "tools": [
-        {"name": "AWS (EC2, SES, S3)", "icon": "fab fa-aws"},
-        {"name": "Terraform", "icon": "fas fa-globe"},
-        {"name": "CI/CD", "icon": "fas fa-infinity"},
-        {"name": "SQL", "icon": "fas fa-database"},
-        {"name": "Firebase", "icon": "fas fa-fire"},
-        {"name": "Git", "icon": "fab fa-git-alt"},
-        {"name": "Linux", "icon": "fab fa-linux"},
-        {"name": "Docker", "icon": "fab fa-docker"},
-        {"name": "Traefik", "icon": "fas fa-network-wired"}
+        {
+          "name": "AWS (EC2, SES, S3)",
+          "icon": "fab fa-aws"
+        },
+        {
+          "name": "Terraform",
+          "icon": "fas fa-globe"
+        },
+        {
+          "name": "CI/CD",
+          "icon": "fas fa-infinity"
+        },
+        {
+          "name": "SQL",
+          "icon": "fas fa-database"
+        },
+        {
+          "name": "Firebase",
+          "icon": "fas fa-fire"
+        },
+        {
+          "name": "Git",
+          "icon": "fab fa-git-alt"
+        },
+        {
+          "name": "Linux",
+          "icon": "fab fa-linux"
+        },
+        {
+          "name": "Docker",
+          "icon": "fab fa-docker"
+        },
+        {
+          "name": "Traefik",
+          "icon": "fas fa-network-wired"
+        }
       ]
     },
-"experience": [
+    "experience": [
       {
         "title": "Software Developer",
         "company": "readytowork-corp",
         "location": "Remote (Chiyoda Ku, Tokyo, Japan)",
         "date": "July 2022 - Feb 2023",
-        "color": "bg-blue-500",
-        "responsibilities": [
-          "Developed mobile device simulation feature in React web application & created reusable React components.",
-          "Implemented intricate data validation logic, handling nested data structures effectively.",
-          "Demonstrated proficiency in MySQL, crafting complex queries including joins, sub-queries, transactions, views.",
-          "Conducted comprehensive peer code reviews to ensure code quality and best practices.",
-          "Integrated i18next into Next.js for smooth internationalization and localization."
-        ]
+        "color": "bg-blue-500"
       },
       {
         "title": "Software Developer Intern",
         "company": "Real Time Solutions Pvt. Ltd.",
         "location": "Lalitpur, Nepal",
         "date": "June 2021 - Oct 2021",
-        "color": "bg-green-500",
-        "responsibilities": [
-          "Employed web socket connections to fetch meteorological data for interactive ReactJS dashboards.",
-          "Utilized Leaflet to dynamically map meteorological data onto geographical regions.",
-          "Containerized and deployed interactive dashboards using Docker with Nginx."
-        ]
+        "color": "bg-green-500"
       }
-    ],    "education": [
+    ],
+    "education": [
       {
         "institution": "Fanshawe College",
         "degree": "Post Graduate in Software & Information Systems Testing",
@@ -86,4 +147,5 @@
         "date": "Aug 2019 - May 2022"
       }
     ]
-  }}
+  }
+}

@@ -14,6 +14,36 @@
     "favicon": "/favicon.ico"
   },
   "abouts": {
+    "author": {
+      "name": "Angel Dhakal",
+      "bio": "Software developer passionate about creating efficient and scalable solutions."
+    },
+    "social": [
+      {
+        "name": "Website",
+        "url": "https://codeangel.tech",
+        "icon": "fas fa-globe"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/andy4747",
+        "icon": "fab fa-github"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/angeldhakal",
+        "icon": "fab fa-linkedin-in"
+      },
+      {
+        "name": "Twitter",
+        "url": "https://x.com/andydl101",
+        "icon": "fab fa-twitter"
+      }
+    ],
+    "site": {
+      "logo": "/images/logo.png",
+      "favicon": "/favicon.ico"
+    },
     "profile_image": "/images/angeldhakal.jpg",
     "skills": {
       "languages": [
@@ -48,7 +78,7 @@
       ],
       "frameworks": [
         {
-          "name": "Standard Go Library",
+          "name": "Go Stdlib",
           "icon": "fab fa-golang"
         },
         {
@@ -82,7 +112,7 @@
       ],
       "tools": [
         {
-          "name": "AWS (EC2, SES, S3)",
+          "name": "AWS",
           "icon": "fab fa-aws"
         },
         {
@@ -92,10 +122,6 @@
         {
           "name": "CI/CD",
           "icon": "fas fa-infinity"
-        },
-        {
-          "name": "SQL",
-          "icon": "fas fa-database"
         },
         {
           "name": "Firebase",
@@ -123,22 +149,25 @@
       {
         "title": "Software Developer",
         "company": "readytowork-corp",
-        "location": "Remote (Chiyoda Ku, Tokyo, Japan)",
-        "date": "July 2022 - Feb 2023",
-        "color": "bg-blue-500"
+        "location": "Remote (Tokyo, Japan)",
+        "date": "July 2022 - Feb 2023"
       },
       {
         "title": "Software Developer Intern",
         "company": "Real Time Solutions Pvt. Ltd.",
         "location": "Lalitpur, Nepal",
-        "date": "June 2021 - Oct 2021",
-        "color": "bg-green-500"
+        "date": "June 2021 - Oct 2021"
       }
     ],
     "education": [
       {
         "institution": "Fanshawe College",
-        "degree": "Post Graduate in Software & Information Systems Testing",
+        "degree": "Post Graduate in Technical Systems Analysis",
+        "date": "Jan 2025 - Present"
+      },
+      {
+        "institution": "Fanshawe College",
+        "degree": "Post Graduate in Software Testing",
         "date": "Jan 2024 - Aug 2024"
       },
       {

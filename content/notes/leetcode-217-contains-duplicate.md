@@ -8,10 +8,6 @@ images: [
 draft: false
 ---
 
-# neetcode/arrays-hashing/contains_duplicate.go
-
-# Notes
-
 ## Problem
 
 LeetCode 217 - Contains Duplicate

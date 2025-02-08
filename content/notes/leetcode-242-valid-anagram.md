@@ -5,10 +5,6 @@ tags: ["DSA", "Data Structure", "Algorithms", "Arrays", "Hashmap", "Note", "leet
 draft: false
 ---
 
-# neetcode/arrays-hashing/valid_anagram.go
-
-# Notes
-
 ## Problem
 
 LeetCode 242 - Valid Anagram

@@ -1,37 +1,37 @@
 <header class="mb-8">
-    <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
+  <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
 
-    {{$image:=.Params.image}}
-    {{if $image}}
-    <div class="mb-10">
-        <img src="{{ .Params.image }}" width="1200px" class="mx-auto" alt="Pong Mania">
-    </div>
-    {{end}}
-    <div class="text-sm text-gray-500 dark:text-gray-400 mb-4">
-        <span>{{ .Date.Format "January 2, 2006" }}</span>
-        <span class="mx-2">•</span>
-        <span>{{ .ReadingTime }} min read</span>
-        {{ $categories:= .Params.categories }}
-        {{ if $categories }}
-        <span class="mx-2">•</span>
-        <div class="mr-4 inline-block">
-            <i class="fa-regular fa-folder mr-2"></i>
-            {{ range $i,$p:= $categories }}
-            <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/">
-                {{ . | humanize }}{{ if ne $i (sub (len $categories) 1) }}
-                {{ "," }}
-                {{ end }}
-            </a>
-            {{ end }}
-        </div>
+  {{$image:=.Params.image}}
+  {{if $image}}
+  <div class="mb-10">
+    <!-- <img src="{{ .Params.image }}" width="1200px" class="mx-auto" alt="Pong Mania"> -->
+  </div>
+  {{end}}
+  <div class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+    <span>{{ .Date.Format "January 2, 2006" }}</span>
+    <span class="mx-2">•</span>
+    <span>{{ .ReadingTime }} min read</span>
+    {{ $categories:= .Params.categories }}
+    {{ if $categories }}
+    <span class="mx-2">•</span>
+    <div class="mr-4 inline-block">
+      <i class="fa-regular fa-folder mr-2"></i>
+      {{ range $i,$p:= $categories }}
+      <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/">
+        {{ . | humanize }}{{ if ne $i (sub (len $categories) 1) }}
+        {{ "," }}
         {{ end }}
+      </a>
+      {{ end }}
     </div>
-    <div class="flex flex-wrap gap-2">
-        {{ range .Params.tags }}
-        <a href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
-            <span class="bg-accent-light dark:bg-accent-dark text-white px-2 py-1 rounded text-sm">{{ . | humanize
-                }}</span>
-        </a>
-        {{ end }}
-    </div>
+    {{ end }}
+  </div>
+  <div class="flex flex-wrap gap-2">
+    {{ range .Params.tags }}
+    <a href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
+      <span class="bg-accent-light dark:bg-accent-dark text-white px-2 py-1 rounded text-sm">{{ . | humanize
+        }}</span>
+    </a>
+    {{ end }}
+  </div>
 </header>

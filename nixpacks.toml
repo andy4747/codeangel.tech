@@ -1,14 +1,14 @@
-[providers]
-packages = [
+[phases.setup]
+nixPkgs = [
     "hugo",
     "nodejs"
 ]
 
-[build]
+[phases.build]
 commands = [
     "npm install",
     "npm run build"
 ]
 
 [start]
-command = "npx serve --single public"
+cmd = "npx serve --single public"

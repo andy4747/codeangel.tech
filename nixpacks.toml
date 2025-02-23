@@ -8,7 +8,7 @@ nixPkgs = [
 commands = [
     "npm install",
     "npx tailwindcss -i ./assets/css/main.css -o ./static/css/style.css && npx postcss ./static/css/style.css -o ./static/css/style.css",
-    "hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
+    "hugo --gc --minify",
 ]
 
 [start]

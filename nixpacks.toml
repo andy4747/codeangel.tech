@@ -1,0 +1,14 @@
+[providers]
+packages = [
+    "hugo",
+    "nodejs"
+]
+
+[build]
+commands = [
+    "npm install",
+    "npm run build"
+]
+
+[start]
+command = "npx serve --single public"

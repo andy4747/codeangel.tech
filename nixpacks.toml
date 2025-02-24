@@ -4,6 +4,7 @@ nixPkgs = [
     "hugo",
     "nodejs",
     "git",
+    "python",
 ]
 
 [phases.build]
@@ -15,4 +16,4 @@ commands = [
 ]
 
 [start]
-cmd = "npx serve --single public"
+cmd = "python -m http.server 8080"

@@ -1,19 +1,14 @@
 [phases.setup]
-nixPkgs = [
-    "go",
-    "hugo",
-    "nodejs",
-    "git",
-    "python",
-]
+nixPkgs = ["go", "hugo", "nodejs", "git", "python"]
 
 [phases.build]
 commands = [
-    "go mod download",
-    "npm install",
-    "npx tailwindcss -i ./assets/css/main.css -o ./static/css/style.css && npx postcss ./static/css/style.css -o ./static/css/style.css",
-    "hugo --gc --minify",
+  "go mod download",
+  "npm install",
+  "npx tailwindcss -i ./assets/css/main.css -o ./static/css/style.css && npx postcss ./static/css/style.css -o ./static/css/style.css",
+  "hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
+  "go build server.go",
 ]
 
 [start]
-cmd = "python -m http.server 8080"
+cmd = "./server -port 8080"

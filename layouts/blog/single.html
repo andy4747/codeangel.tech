@@ -12,29 +12,7 @@
           <span class="mr-2 text-sm text-gray-600 dark:text-gray-400">Share:</span>
           {{ partial "social-share.html" . }}
         </div>
-
-        <!-- Disqus Comments -->
-        {{ if site.Config.Services.Disqus.Shortname }}
-        <div class="mt-10">
-          {{ template "_internal/disqus.html" . }}
-        </div>
-        {{ end }}
-
-        <!-- Related posts -->
-        {{ $related := (where site.RegularPages "Section" "in" site.Params.mainSections) | intersect (where
-        site.RegularPages ".Title" "!=" .Title) | union (site.RegularPages.Related . ) }}
-        {{ $related = $related | shuffle | first 3 }}
-        {{ with $related }}
-        <div class="section pb-0">
-          <h2 class="h3 mb-12">{{ T "related_posts" }}</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {{ range . }}
-            {{ partial "blog-card.html" . }}
-            {{ end }}
-          </div>
-        </div>
     </div>
-    {{ end }}
     </article>
   </div>
   </div>

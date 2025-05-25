@@ -1,5 +1,5 @@
 ---
-title: "My Notes"
+title: "Notes"
 description: "A collection of my thoughts, learnings, and ideas on various topics."
 date: 2024-09-29
 draft: false

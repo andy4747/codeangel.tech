@@ -1,49 +1,39 @@
 <div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md flex overflow-hidden">
-    <!-- Project Image Section -->
-    <div class="relative w-1/3">
-        <img src="{{ .Params.image }}" alt="{{ .Params.alt }}" class="w-full h-full object-cover">
-        <!-- Live Badge if demoUrl exists -->
-        {{ if .Params.demoUrl }}
-        <span class="absolute top-2 left-2 bg-success text-white text-xs px-2 py-1 rounded-full">Live</span>
-        {{ end }}
+  <div class="w-2/3 p-6 flex flex-col justify-between">
+    <!-- Project Title -->
+    <a href="{{.Params.info_url}}">
+      <h2 class="text-xl font-bold mb-2">{{ .Params.title }}</h2>
+    </a>
+    <!-- Project Description -->
+    <p class="text-text-light dark:text-text-dark mb-4">{{ .Params.description }}</p>
+
+    <!-- Tags -->
+    <div class="flex flex-wrap gap-2 mb-4">
+      {{ range .Params.tags }}
+      <a href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
+        <span class="bg-accent-light dark:bg-accent-dark text-white px-2 py-1 rounded text-sm">{{ .
+          }}</span>
+      </a>
+      {{ end }}
     </div>
 
-    <!-- Project Details Section -->
-    <div class="w-2/3 p-6 flex flex-col justify-between">
-        <!-- Project Title -->
-        <a href="{{.Params.info_url}}">
-            <h2 class="text-xl font-bold mb-2">{{ .Params.title }}</h2>
-        </a>
-        <!-- Project Description -->
-        <p class="text-text-light dark:text-text-dark mb-4">{{ .Params.description }}</p>
+    <!-- Links Section (GitHub and Demo as buttons) -->
+    <div class="flex gap-2">
+      <!-- Source Code (GitHub) Conditional Rendering -->
+      {{ if .Params.sourceCodeUrl }}
+      <a href="{{ .Params.sourceCodeUrl }}" target="_blank"
+        class="bg-red-500 dark:bg-red-500 text-white px-2 py-1 rounded-3xl hover:bg-accent-dark">
+        View Code
+      </a>
+      {{ end }}
 
-        <!-- Tags -->
-        <div class="flex flex-wrap gap-2 mb-4">
-            {{ range .Params.tags }}
-            <a href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
-                <span class="bg-accent-light dark:bg-accent-dark text-white px-2 py-1 rounded text-sm">{{ .
-                    }}</span>
-            </a>
-            {{ end }}
-        </div>
-
-        <!-- Links Section (GitHub and Demo as buttons) -->
-        <div class="flex gap-2">
-            <!-- Source Code (GitHub) Conditional Rendering -->
-            {{ if .Params.sourceCodeUrl }}
-            <a href="{{ .Params.sourceCodeUrl }}" target="_blank"
-                class="bg-red-500 dark:bg-red-500 text-white px-2 py-1 rounded-3xl hover:bg-accent-dark">
-                View Code
-            </a>
-            {{ end }}
-
-            <!-- Demo URL Conditional Rendering -->
-            {{ if .Params.demoUrl }}
-            <a href="{{ .Params.demoUrl }}" target="_blank"
-                class="bg-success text-white px-2 py-1 rounded-3xl hover:bg-green-700">
-                View Demo
-            </a>
-            {{ end }}
-        </div>
+      <!-- Demo URL Conditional Rendering -->
+      {{ if .Params.demoUrl }}
+      <a href="{{ .Params.demoUrl }}" target="_blank"
+        class="bg-success text-white px-2 py-1 rounded-3xl hover:bg-green-700">
+        View Demo
+      </a>
+      {{ end }}
     </div>
+  </div>
 </div>

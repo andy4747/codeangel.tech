@@ -1,5 +1,5 @@
 ---
-title: "My Articles"
-date: 2024-09-29
+title: "Blog"
+date: 2025-05-25
 draft: false
 ---

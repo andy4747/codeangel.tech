@@ -1,3 +1,3 @@
 {
-  "about": "/:filename/"
+  "about": "/:contentbasename/"
 }

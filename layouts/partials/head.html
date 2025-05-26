@@ -9,6 +9,7 @@
 {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
 {{ end }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link
   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Fira+Code&display=swap"
   rel="stylesheet">

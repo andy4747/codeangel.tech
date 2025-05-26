@@ -11,19 +11,14 @@
       "weight": 2
     },
     {
-      "name": "Notes",
-      "url": "/notes/",
+      "name": "Blog",
+      "url": "/blog/",
       "weight": 3
     },
     {
       "name": "About",
       "url": "/about/",
       "weight": 4
-    },
-    {
-      "name": "Blog",
-      "url": "/blog/",
-      "weight": 5
     }
   ]
 }

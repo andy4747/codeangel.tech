@@ -1,5 +1,5 @@
 ---
-title: "Boolean Logic"
+title: "Nand2Tetris - Boolean Logic"
 date: 2025-05-25
 draft: false
 ---

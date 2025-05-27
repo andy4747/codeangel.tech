@@ -4,7 +4,7 @@
 <meta name="description"
   content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{end }}{{ end }}">
 <link rel="canonical" href="{{ .Permalink }}">
-{{ $styles := resources.Get "css/main.css" | resources.PostCSS }}
+{{ $styles := resources.Get "css/main.css" | css.PostCSS }}
 {{ if hugo.IsProduction }}
 {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
 {{ end }}

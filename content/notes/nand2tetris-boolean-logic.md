@@ -1,6 +1,7 @@
 ---
 title: "Nand2Tetris - Boolean Logic"
 date: 2025-05-25
+tags: ["Boolean Algebra", "Logic", "Gates", "Chips", "Algorithms"]
 draft: false
 ---
 # Boolean Logic

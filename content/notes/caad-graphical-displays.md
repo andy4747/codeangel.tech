@@ -7,15 +7,39 @@ draft: false
 
 # Graphical Displays Workings in Computer Systems
 
-Most graphical devices now use LCD display, Liquid Crystal Display, which has a chemical polymer trapped between two glass surface, which blocks or transmits the light based on the electrical charges applied to it.
+<!--toc:start-->
+- [Graphical Displays Workings in Computer Systems](#graphical-displays-workings-in-computer-systems)
+  - [LCDs Structure and Operation](#lcds-structure-and-operation)
+  - [Mechanism of Light control](#mechanism-of-light-control)
+    - [Using Natural Light](#using-natural-light)
+    - [Using a Backlight](#using-a-backlight)
+  - [Active Matrix with TFT](#active-matrix-with-tft)
+  - [RGB Mask and Pixel Color](#rgb-mask-and-pixel-color)
+  - [Bitmap and Color Depth](#bitmap-and-color-depth)
+  - [Raster Refresh Buffer/Frame Buffer and Alpha Channel](#raster-refresh-bufferframe-buffer-and-alpha-channel)
+<!--toc:end-->
 
-The chemical polymer contains rod shaped molecules that forms a helix shape and bends the light entering the display, from a source or some kind of reflection. When electrical charge is applied, the rod-shaped molecules straighten out and no longer bend the light, since liquid chemical is trapped between two screens polarized at 90 degrees, the light cannot pass through it unless it is bent. The graphics is displayed to the user by sending appropriate electrical charges, which bends the light from the screens and graphics is displayed in the screen.
+## LCDs Structure and Operation
+Most graphical devices now use LCDs (Liquid Crystal Display) display. It consists of a liquid crystal chemical polymer trapped between two glass surfaces. The liquid crystal chemical changes its alignment when an electrical charge is applied, that changes how it interacts with light and determines whether to let light pass through or block it, which results in images being shown in the screen.
 
-In modern displays, they use active matrix, which has tiny transistor switch in each pixel to control the current and make the images sharper.
+## Mechanism of Light control
+
+### Using Natural Light
+Light enters the screen from the front and passes through the liquid crystal layer. The liquid crystals, when not charged, are twisted and can rotate the direction (polarization) of the light, allowing it to pass through the second polarizing filter and reflect back to your eyes. When a charge is applied, the liquid crystals straighten out, so the light is blocked by the polarizer and does not reflect, making that part of the screen appear dark. This method does not need a backlight because it uses ambient light and a reflective backing.
+
+### Using a Backlight
+The backlight shines light through the back of the screen. This light passes through the liquid crystal layer and two polarizing filters. Each pixel contains liquid crystals that are twisted in their natural state or straight when an electrical charge is applied. When twisted, they allow some light to pass through; when straightened, they block the light. By controlling each pixel, the display can show different colors and images, even in the dark.
+
+## Active Matrix with TFT
+In modern displays, they use active matrix, which has thin-film transistor switch in each pixel to control the voltage precisely and make the images sharper.
+
+## RGB Mask and Pixel Color
 A RGB(Red, Green, Blue) mask is associated with each pixel to determines the intensity of each color on shown on the screen.
 
+## Bitmap and Color Depth
 An image is composed of matrix of pixels, which is represented by matrix of bits, this is also known as `bitmap`. A color active matrix typically uses `8 bits` to represent each value of RGB, which is `24 bits` in total and thus allows millions of colors to be allowed to be displayed on the screen.
 
-Raster Refresh Buffer also known as Frame Buffer is a location in memory that stores the pixel data that will be shown to display.
-It stores RGB and sometimes `A (Alpha)` values as well, if the displays support color active matrix display as well as alpha values.
+## Raster Refresh Buffer/Frame Buffer and Alpha Channel
+Raster Refresh Buffer also known as Frame Buffer is a section in memory that stores the pixel data that will be shown on the display.
+It stores RGB values for each pixels and sometimes `A (Alpha)` values as well to represent transparency, The use of an `alpha` channel is common in digital graphics, but not all display hardware supports alpha bending.
 

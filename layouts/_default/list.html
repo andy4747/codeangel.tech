@@ -1,18 +1,20 @@
 {{ define "main" }}
-<div class="container mx-auto px-4 py-12">
-    <h1 class="text-3xl md:text-4xl font-bold mb-8">{{ .Title }}</h1>
-    {{ if .Content }}
-    <div class="prose dark:prose-dark max-w-none mb-8">
-        {{ .Content }}
+<div class="list-container">
+  <h1 class="list-title">{{ .Title }}</h1>
+  {{ if .Content }}
+  <div class="list-content">
+    {{ .Content }}
+  </div>
+  {{ end }}
+  <div class="posts-grid">
+    {{ range .Pages }}
+    <div class="post-card">
+      <h2 class="post-card-title">
+        <a href="{{ .Permalink }}" class="post-card-link">{{ .Title }}</a>
+      </h2>
+      <p class="post-card-summary">{{ .Summary }}</p>
     </div>
     {{ end }}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {{ range .Pages }}
-        <div class="bg-secondary-light dark:bg-secondary-dark p-4 rounded-lg shadow-md">
-            <h2 class="font-semibold text-lg mb-2"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-            <p>{{ .Summary }}</p>
-        </div>
-        {{ end }}
-    </div>
+  </div>
 </div>
 {{ end }}

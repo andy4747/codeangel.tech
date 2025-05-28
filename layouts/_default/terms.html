@@ -1,10 +1,12 @@
 {{ define "main" }}
-<div class="container mx-auto px-4 py-12">
-    <h1 class="text-3xl md:text-4xl font-bold mb-8">All Tags</h1>
-    <ul>
-        {{ range .Pages }}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{ end }}
-    </ul>
+<div class="list-container">
+  <h1 class="list-title">All Tags</h1>
+  <ul class="taxonomy-list">
+    {{ range .Pages }}
+    <li class="taxonomy-item">
+      <a href="{{ .Permalink }}" class="taxonomy-link">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
 </div>
 {{ end }}

@@ -1,36 +1,30 @@
-<div class="bg-secondary-light dark:bg-secondary-dark rounded-lg shadow-md flex overflow-hidden">
-  <div class="w-2/3 p-6 flex flex-col justify-between">
+<div class="post-card project-card">
+  <div class="project-content">
     <!-- Project Title -->
-    <a href="{{.Params.info_url}}">
-      <h2 class="text-xl font-bold mb-2">{{ .Params.title }}</h2>
+    <a href="{{.Params.info_url}}" class="post-card-link">
+      <h2 class="post-card-title project-title">{{ .Params.title }}</h2>
     </a>
     <!-- Project Description -->
-    <p class="text-text-light dark:text-text-dark mb-4">{{ .Params.description }}</p>
-
+    <p class="post-card-summary">{{ .Params.description }}</p>
     <!-- Tags -->
-    <div class="flex flex-wrap gap-2 mb-4">
+    <div class="project-tags">
       {{ range .Params.tags }}
-      <a href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
-        <span class="bg-accent-light dark:bg-accent-dark text-white px-2 py-1 rounded text-sm">{{ .
-          }}</span>
+      <a href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/" class="project-tag">
+        <span class="tag-label">{{ . }}</span>
       </a>
       {{ end }}
     </div>
-
     <!-- Links Section (GitHub and Demo as buttons) -->
-    <div class="flex gap-2">
+    <div class="project-links">
       <!-- Source Code (GitHub) Conditional Rendering -->
       {{ if .Params.sourceCodeUrl }}
-      <a href="{{ .Params.sourceCodeUrl }}" target="_blank"
-        class="bg-red-500 dark:bg-red-500 text-white px-2 py-1 rounded-3xl hover:bg-accent-dark">
+      <a href="{{ .Params.sourceCodeUrl }}" target="_blank" class="project-btn project-btn-code">
         View Code
       </a>
       {{ end }}
-
       <!-- Demo URL Conditional Rendering -->
       {{ if .Params.demoUrl }}
-      <a href="{{ .Params.demoUrl }}" target="_blank"
-        class="bg-success text-white px-2 py-1 rounded-3xl hover:bg-green-700">
+      <a href="{{ .Params.demoUrl }}" target="_blank" class="project-btn project-btn-demo">
         View Demo
       </a>
       {{ end }}

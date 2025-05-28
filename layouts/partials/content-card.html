@@ -1,0 +1,16 @@
+<article class="content-card">
+  {{ with .Params.image }}
+  <img src="{{ . }}" alt="{{ $.Title }}" class="content-image">
+  {{ end }}
+  <!-- blog-content -->
+  <div class="content-block">
+    <a href="{{ .Permalink }}" class="content-title content-title-link">{{ .Title }}</a>
+    <time datetime="{{ .Date.Format " 2006-01-02" }}" class="content-date">
+      {{ .Date.Format "January 2, 2006" }}
+    </time>
+    {{ with .Description }}
+    <p class="content-summary">{{ . }}</p>
+    {{ end }}
+    <a href="{{ .Permalink }}" class="content-link">View Blog</a>
+  </div>
+</article>

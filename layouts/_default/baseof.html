@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}" class="h-full">
+<html lang="{{ .Site.LanguageCode }}" class="full-height">
 
 <head>
   {{ partial "head.html" . }}
 </head>
 
-<body class="h-full bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark">
-  <div class="min-h-full flex flex-col w-2/3 mx-auto">
+<body class="page-body">
+  <div class="layout-wrapper">
     {{ partial "header.html" . }}
-    <main class="flex-grow">
+    <main class="main-content">
       {{ block "main" . }}{{ end }}
     </main>
     {{ partial "footer.html" . }}

@@ -1,23 +1,22 @@
-<header class="mb-8">
-  <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
-
+<header class="content-header">
+  <h1 class="content-title">{{ .Title }}</h1>
   {{$image:=.Params.image}}
   {{if $image}}
-  <div class="mb-10">
+  <div class="content-image-container">
     <!-- <img src="{{ .Params.image }}" width="1200px" class="mx-auto" alt="Pong Mania"> -->
   </div>
   {{end}}
-  <div class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+  <div class="content-meta">
     <span>{{ .Date.Format "January 2, 2006" }}</span>
-    <span class="mx-2">•</span>
+    <span class="meta-separator">•</span>
     <span>{{ .ReadingTime }} min read</span>
     {{ $categories:= .Params.categories }}
     {{ if $categories }}
-    <span class="mx-2">•</span>
-    <div class="mr-4 inline-block">
-      <i class="fa-regular fa-folder mr-2"></i>
+    <span class="meta-separator">•</span>
+    <div class="meta-categories">
+      <i class="fa-regular fa-folder meta-category-icon"></i>
       {{ range $i,$p:= $categories }}
-      <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/">
+      <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/" class="meta-category-link">
         {{ . | humanize }}{{ if ne $i (sub (len $categories) 1) }}
         {{ "," }}
         {{ end }}
@@ -26,11 +25,10 @@
     </div>
     {{ end }}
   </div>
-  <div class="flex flex-wrap gap-2">
+  <div class="content-tags">
     {{ range .Params.tags }}
-    <a href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
-      <span class="bg-accent-light dark:bg-accent-dark text-white px-2 py-1 rounded text-sm">{{ . | humanize
-        }}</span>
+    <a href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/" class="content-tag">
+      <span class="content-tag-label">{{ . | humanize }}</span>
     </a>
     {{ end }}
   </div>

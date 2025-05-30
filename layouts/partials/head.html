@@ -1,14 +1,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+
 <meta name="description"
   content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{end }}{{ end }}">
 <link rel="canonical" href="{{ .Permalink }}">
-{{ $styles := resources.Get "css/main.css" | resources.PostCSS }}
+
+<!-- Load var.css -->
+{{ $vars := resources.Get "css/var.css" }}
+<link rel="stylesheet" href="{{ $vars.RelPermalink }}">
+
+<!-- Load main.css with optional minification and fingerprinting -->
+{{ $main := resources.Get "css/main.css" }}
 {{ if hugo.IsProduction }}
-{{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
+{{ $main = $main | minify | fingerprint }}
 {{ end }}
-<link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+<link rel="stylesheet" href="{{ $main.RelPermalink }}">
+
+<!-- Favicon and fonts -->
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link
   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Fira+Code&display=swap"
@@ -16,13 +25,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
   integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script>
-  localStorage.setItem("theme", "dark");
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }
-</script>
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<script id="dsq-count-scr" src="//codeangel-1.disqus.com/count.js" async></script>
+
+<!-- Theme toggle JS (can also be moved to the end of <body> if preferred) -->
+<script defer src="{{ " js/theme-toggle.js" | relURL }}"></script>
